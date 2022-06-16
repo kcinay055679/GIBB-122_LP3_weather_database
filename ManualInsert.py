@@ -26,7 +26,6 @@ def check_manual_insert():
 def validate_parameter(parameter_description, regex_pattern):
     while True:
         result = input(parameter_description)
-
         x = re.findall(regex_pattern, result)
         if len(x) > 0:
             return x
