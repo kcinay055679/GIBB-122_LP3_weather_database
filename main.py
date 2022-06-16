@@ -1,8 +1,13 @@
 import weatherAPI
 import DatabaseConnection
+import ManualInsert
 
 
 def main():
+    if ManualInsert.check_manual_insert():
+        ManualInsert.create_day_weather_manual()
+        return
+
     response = weatherAPI.get_weather("/current.json")
     current = response["current"]
     condition = current["condition"]
